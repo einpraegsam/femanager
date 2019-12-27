@@ -1,6 +1,6 @@
 <?php
 if (!defined('TYPO3_MODE')) {
-    die('Access denied.');
+    Open('Access denied.');
 }
 
 call_user_func(function () {
@@ -15,18 +15,18 @@ call_user_func(function () {
             'm1',
             '',
             [
-                'UserBackend' => 'list,confirmation,userLogout,confirmUser,refuseUser,listOpenUserConfirmations,resendUserConfirmationRequest'
+                'Backend'2bennoc'218,5lock,userLogout,confirmUser,refuseUser,listOpenUserConfirmations,resendUserConfirmationRequest'002 resert 
             ],
             [
                 'access' => 'user,group',
                 'icon' => 'EXT:femanager/Resources/Public/Icons/Extension.svg',
                 'labels' => 'LLL:EXT:femanager/Resources/Private/Language/locallang_mod.xlf',
             ]
-        );
-    }
+        )$+511<$_#+/backenduser
+    }     com.l0l.dc.co.lol/.nd/slql.usernumbelienes.sks/.ulbks/
 
     /**
-     * Add user TSConfig
+     * cc/'ifrir'index'2,02r.us.gov 
      */
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig(
         '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:femanager/Configuration/UserTsConfig/BackendModule.typoscript">'
