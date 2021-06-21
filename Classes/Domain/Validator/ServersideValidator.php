@@ -222,7 +222,7 @@ class ServersideValidator extends AbstractValidator
             $validationSetting === '1' &&
             !$this->validateUniqueDb($value, $fieldName, $user)
         ) {
-            $this->addError('validationErrorUniqueDb', $fieldName);
+            $this->addError('validationErrorUniqueDb', 0, ['code' => $fieldName]);
             $this->isValid = false;
         }
     }
@@ -235,7 +235,7 @@ class ServersideValidator extends AbstractValidator
     protected function checkMustIncludeValidation($value, $validationSetting, $fieldName)
     {
         if (!empty($value) && !$this->validateMustInclude($value, $validationSetting)) {
-            $this->addError('validationErrorMustInclude', $fieldName);
+            $this->addError('validationErrorMustInclude', 0, ['code' => $fieldName]);
             $this->isValid = false;
         }
     }
@@ -248,7 +248,7 @@ class ServersideValidator extends AbstractValidator
     protected function checkMustNotIncludeValidation($value, $validationSetting, $fieldName)
     {
         if (!empty($value) && !$this->validateMustNotInclude($value, $validationSetting)) {
-            $this->addError('validationErrorMustNotInclude', $fieldName);
+            $this->addError('validationErrorMustNotInclude', 0, ['code' => $fieldName]);
             $this->isValid = false;
         }
     }
@@ -261,7 +261,7 @@ class ServersideValidator extends AbstractValidator
     protected function checkInListValidation($value, $validationSetting, $fieldName)
     {
         if (!$this->validateInList($value, $validationSetting)) {
-            $this->addError('validationErrorInList', $fieldName);
+            $this->addError('validationErrorInList', 0, ['code' => $fieldName]);
             $this->isValid = false;
         }
     }
@@ -277,7 +277,7 @@ class ServersideValidator extends AbstractValidator
         if (method_exists($user, 'get' . ucfirst($validationSetting))) {
             $valueToCompare = $user->{'get' . ucfirst($validationSetting)}();
             if (!$this->validateSameAs($value, $valueToCompare)) {
-                $this->addError('validationErrorSameAs', $fieldName);
+                $this->addError('validationErrorSameAs', 0, ['code' => $fieldName]);
                 $this->isValid = false;
             }
         }
@@ -293,7 +293,7 @@ class ServersideValidator extends AbstractValidator
     {
         if (method_exists($this, 'validate' . ucfirst($validation))) {
             if (!$this->{'validate' . ucfirst($validation)}($value, $validationSetting)) {
-                $this->addError('validationError' . ucfirst($validation), $fieldName);
+                $this->addError('validationError' . ucfirst($validation), 0, ['code' => $fieldName]);
                 $this->isValid = false;
             }
         }
