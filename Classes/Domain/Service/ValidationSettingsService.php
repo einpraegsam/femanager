@@ -72,7 +72,7 @@ class ValidationSettingsService
                 $string .= $this->getSingleValidationString($validation, $configuration);
             }
         }
-        return $string;
+        return rtrim($string, ',');
     }
 
     /**
